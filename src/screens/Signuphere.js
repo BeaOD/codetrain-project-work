@@ -1,26 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Signupscreen({navigation}) {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.loginTextContainer}> 
-      <Text style={styles.loginText}>Sign Up</Text>
+      <Text style={styles.person}>
+      <MaterialIcons name="person" size={100} color="#34aeeb" /></Text>
       </View>
 
       <View> 
-        <TextInput style={styles.input} placeholderTextColor='grey' placeholder='Business Name'/>
+        <TextInput style={styles.input} placeholderTextColor='grey' placeholder='Full Name'/>
         <TextInput style={styles.input} placeholderTextColor='grey' placeholder='Email'/>
-        <TextInput style={styles.input} placeholderTextColor='grey'
-         placeholder='Password' secureTextEntry={true}/>
+        <TextInput style={styles.input} placeholderTextColor='grey'placeholder='Role' />
          <TextInput style={styles.input} placeholderTextColor='grey'
-         placeholder='Confirm Password' secureTextEntry={true}/>
+         placeholder=' Password' secureTextEntry={true}/>
         
       </View>
 
       <View>
         <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Continue </Text>
+          <Text style={styles.buttonText}>Register </Text>
         </TouchableOpacity>
       </View>
 
@@ -42,7 +43,12 @@ export default function Signupscreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal:50,
-    marginTop:100,
+    marginTop:20,
+  },
+  person:{
+    
+    marginHorizontal:70,
+
   },
   loginText:{
     color:'#34aeeb',
@@ -65,7 +71,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     borderRadius:10,
-    marginVertical:50,
+    marginVertical:10,
   },
   buttonText:{
     color:'white',
@@ -86,7 +92,7 @@ const styles = StyleSheet.create({
   },
 
   letSee:{
-    marginTop:40,
+    marginTop:20,
     
   }
 });

@@ -2,52 +2,40 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, ScrollView, Text, Image, TouchableOpacity, View } from 'react-native';
-import { useState } from 'react';
-import Addnew from './Addnew';
-import Existingclients from './Existingclients'
 
 export default function Landingscreen({navigation}) {
-  const [allthedata, setAllthedata] = useState([
-        {clientName:'Codetrain Africa',
-         id:'1'}
-    
-      ])
-    
-      addNewform =(form) =>{
-        form.id = Math.random().toString()
-        allthedata ={form,id}
-         setAllthedata(
-          [...allthedata, form]
-        )
-    }
-
+ 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         
         <View>
         
-          <Image source={require('../../assets/green.jpg')}
+          <Image source={require('../../assets/artem-beliaikin-_FyZbe4UviU-unsplash.jpg')}
           style={styles.image}/>
         
       </View>
 
       <View>
         <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.buttonText} onPress={() => {navigation.navigate('Addnew')}} 
-          addNewform={addNewform}>Add New Client  </Text>
+          <Text style={styles.buttonText} onPress={() => {navigation.navigate('OneFlower')}} 
+          >Flower  </Text>
         </TouchableOpacity>
       </View>
 
       <View>
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.buttonText}
-           onPress={() => {navigation.navigate('Existingclients')}}>Existing Client </Text>
+           onPress={() => {navigation.navigate('FlowerList')}}>Flower List </Text>
+        </TouchableOpacity>
+      </View>  
+      <View>
+        <TouchableOpacity style={styles.buttonContainer}>
+          <Text style={styles.buttonText}
+           onPress={() => {navigation.navigate('MemberProfile')}}>Member Profile </Text>
         </TouchableOpacity>
       </View>  
 
-      <View style={styles.bottomContainer}> 
-             
-     </View>
+     
         
       <StatusBar style="auto" />
     </ScrollView>
